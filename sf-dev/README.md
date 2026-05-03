@@ -1,8 +1,31 @@
-## Salesforce Dev Container
+# Salesforce Dev Container
 
 Using the official salesforce cli container with a few tweaks
 
 ---
+
+## Guide to using container
+Create a sf project using sf cli outside of container
+
+```sf project generate --name MyProject```
+
+Authorize org outside terminal
+
+```sfdx force:project:create --projectname MyProject```
+
+Create ```.devcontainer``` folder and put in ```Dockerfile``` and ```devcontainer.json```
+
+Open the project in VS Code and run the ```Dev Containers: Reopen in Container``` command
+
+Allow the container access to your authorized orgs
+```bash
+chmod 700 /root/.sfdx
+chmod 600 /root/.sfdx/key.json
+chmod -R go-rwx /root/.sfdx
+```
+
+---
+## Notes
 
 ### Updated Java version
 Using OpenJDK 21 instead of 11 that comes with the container
@@ -20,12 +43,3 @@ In `devcontainer.json` in mounts
 
 After dev container is setup install code-analyzer
 `sf plugins install @salesforce/plugin-code-analyzer`
-
----
-
-Allow the container access to your authorized orgs
-```bash
-chmod 700 /root/.sfdx
-chmod 600 /root/.sfdx/key.json
-chmod -R go-rwx /root/.sfdx
-```
