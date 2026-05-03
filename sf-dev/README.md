@@ -12,3 +12,5 @@ In `devcontainer.json` in mounts
 - #### Unix
   - `source=${localEnv:HOME}/`
 
+After dev container is setup install code-analyzer
+`sf plugins install @salesforce/plugin-code-analyzer`
