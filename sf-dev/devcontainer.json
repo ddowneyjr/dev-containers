@@ -1,0 +1,37 @@
+{
+  "name": "Salesforce Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "mounts": [
+    "source=${localEnv:HOME}/.sf,target=/root/.sf,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.sfdx,target=/root/.sfdx,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.ssh,target=/root/.ssh,type=bind,consistency=cached"
+  ],
+  "containerEnv": {
+    "SF_AUTOUPDATE_DISABLE": "true",
+    "SFDX_AUTOUPDATE_DISABLE": "true"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "salesforce.salesforcedx-vscode",
+        "salesforce.salesforcedx-vscode-apex",
+        "salesforce.salesforcedx-vscode-core",
+        "salesforce.salesforcedx-vscode-lwc",
+        "salesforce.salesforcedx-vscode-soql",
+        "salesforce.salesforcedx-vscode-visualforce",
+        "redhat.java",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
+      ],
+      "settings": {
+        "salesforcedx-vscode-core.retrieve-test-code-coverage": true,
+        "salesforcedx-vscode-core.push-or-deploy-on-save.enabled": false,
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  },
+  "postCreateCommand": "sf --version && node --version && java -version"
+}
