@@ -27,6 +27,8 @@
         "dbaeumer.vscode-eslint"
       ],
       "settings": {
+        "salesforcedx-vscode-apex.java.home": "/usr/lib/jvm/java-21-openjdk-amd64",
+        "java.jdt.ls.java.home": "/usr/lib/jvm/java-21-openjdk-amd64",
         "salesforcedx-vscode-core.retrieve-test-code-coverage": true,
         "salesforcedx-vscode-core.push-or-deploy-on-save.enabled": false,
         "terminal.integrated.defaultProfile.linux": "bash"
