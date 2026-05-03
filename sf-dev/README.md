@@ -5,21 +5,28 @@ Using the official salesforce cli container with a few tweaks
 ---
 
 ## Guide to using container
-Create a sf project using sf cli outside of container
 
-```sf project generate --name MyProject```
+Install sf cli on computer
+
+Create a sf project using sf cli 
+
+```bash
+sf project generate --name MyProject
+```
 
 Authorize org outside terminal
 
-```sfdx force:project:create --projectname MyProject```
+```bash
+sfdx force:project:create --projectname MyProject
+```
 
 Install and open Docker Desktop
 
-Create ```.devcontainer``` folder and put in ```Dockerfile``` and ```devcontainer.json```
+Create `.devcontainer` folder in project root directory and put in `Dockerfile` and `devcontainer.json`
 
 Create `.ssh` folder in project root directory
 
-Open the project in VS Code and run the ```Dev Containers: Reopen in Container``` command
+Open the project in VS Code and run the `Dev Containers: Reopen in Container` command
 
 Allow the container access to your authorized orgs
 ```bash
