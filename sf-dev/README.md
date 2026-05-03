@@ -13,6 +13,8 @@ Authorize org outside terminal
 
 ```sfdx force:project:create --projectname MyProject```
 
+Install and open Docker Desktop
+
 Create ```.devcontainer``` folder and put in ```Dockerfile``` and ```devcontainer.json```
 
 Open the project in VS Code and run the ```Dev Containers: Reopen in Container``` command
